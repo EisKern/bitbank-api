@@ -7,7 +7,7 @@ require 'openssl'
 require 'active_support'
 require 'active_support/core_ext'
 
-#test
+#testaaaaa
 
 class BitbankAPI
     Public_API_End_Point = "https://public.bitbank.cc"
