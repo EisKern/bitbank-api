@@ -7,6 +7,8 @@ require 'openssl'
 require 'active_support'
 require 'active_support/core_ext'
 
+#test
+
 class BitbankAPI
     Public_API_End_Point = "https://public.bitbank.cc"
     Private_API_End_Point = "https://api.bitbank.cc"    #fail to authenticate without /v1
