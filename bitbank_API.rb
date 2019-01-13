@@ -7,11 +7,9 @@ require 'openssl'
 require 'active_support'
 require 'active_support/core_ext'
 
-#testaaaaa
-
 class BitbankAPI
     Public_API_End_Point = "https://public.bitbank.cc"
-    Private_API_End_Point = "https://api.bitbank.cc"    #fail to authenticate without /v1
+    Private_API_End_Point = "https://api.bitbank.cc" #fail to authenticate without /v1
 
     def initialize(key = nil, secret = nil, coin1, coin2)
         @key = key
