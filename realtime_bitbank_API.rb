@@ -23,7 +23,7 @@ class RealtimeBitbankAPI
             message: ->(envelope){
                 #write process here
                 now = Time.now
-                if (now - @before) >= 3 #interval to get data
+                if (now - @before) >= 3 #interval to push data
                     @before = now
                     if envelope.result[:code] == 200
                         @queue.push(envelope.result[:data][:message]["data"])
