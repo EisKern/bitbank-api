@@ -1,21 +1,22 @@
 # bitbank.cc API by Ruby
 
-This makes it easy to call the API of bitbank in Ruby.
+This makes it easy to call the API of bitbank in Ruby.  
 
 ## Installation
 
-Clone this repository.
+Clone this repository.  
 
 ## Usage
 
-These use gems "active_support" and "pubnub".
-Install before use these.
+These use gems "active_support" and "pubnub".  
+Install before use these.  
 
 ```sh
 bundle init
 ```
 
-```txt:Gemfile
+in Gemfile.
+```txt
 gem "activesupport"
 gem "pubnub"
 ```
@@ -25,7 +26,8 @@ bundle install --path=vendor/bundle
 ```
 
 ### bitbank_api
-```ruby:example
+```ruby
+# sample
 require './bitbank_api'
 
 bitbank = BitbankAPI.new(
@@ -36,8 +38,8 @@ bitbank = BitbankAPI.new(
     )
 ```
 
-The following informations can be called.
-For details, please see (official documents)[https://docs.bitbank.cc/].
+The following informations can be called.  
+For details, please see [official documents](https://docs.bitbank.cc/).
 
 #### Public API (Available without API key and secret)
 - ticker
@@ -45,7 +47,8 @@ For details, please see (official documents)[https://docs.bitbank.cc/].
 - transactions
 - candlestick
 
-```ruby:example
+```ruby
+# sample
 bitbank.ticker
 
 bitbank.depth
@@ -62,7 +65,9 @@ bitbank.candlestick("15min", "20190126")
 - read order
 - read status
 
-```ruby:example
+```ruby
+# sample
+
 bitbank.read_assets
 
 bitbank.read_order
@@ -73,7 +78,9 @@ bitbank.read_status
 - create order
 - cancel order
 
-```ruby:example
+```ruby
+# sample
+
 #                    price, amount, side, type
 bitbank.create_order(400000, 1.0, "buy", "limit")
 
@@ -81,12 +88,14 @@ bitbank.create_order(400000, 1.0, "buy", "limit")
 bitbank.create_order(583273428)
 ```
 
-If errors occur in https connection, each methods return `301`.
-In case of bitbank API error, methods return response code.
-If there is no error, those return data in `json` format.
+If errors occur in https connection, each methods return `301`.  
+In case of bitbank API error, methods return response code.  
+If there is no error, those return data in `json` format.  
 
 ### realtime_bitbank_api
-```ruby:example
+```ruby
+# sample
+
 require 'realtime_bitbank_api'
 
 log = Logger.new("./log20180126.log")
@@ -101,16 +110,16 @@ pubnub = RealtimeBitbankAPI.new("candlestick", "btc", "jpy", log, queue)
 pubnub.unsubscribe
 ```
 
-Following are prepared in pubnub.
+Following are prepared in pubnub.  
 - ticker
 - depth
 - transactions
 - candlestick
-For details, please see (official documents)[https://docs.bitbank.cc/].
+For details, please see [official documents](https://docs.bitbank.cc/).  
 
-Data reception from pubnub channel is started when pubnub instance is created.
-To Receive Data, use 'queue.pop'.
-In default, data is popeed into the queue once every three seconds.
+Data reception from pubnub channel is started when pubnub instance is created.  
+To Receive Data, use 'queue.pop'.  
+In default, data is popeed into the queue once every three seconds.  
 
 ## Future　(if I have time)
 - Add comments to code for easy understanding.
