@@ -81,6 +81,10 @@ bitbank.create_order(400000, 1.0, "buy", "limit")
 bitbank.create_order(583273428)
 ```
 
+If errors occur in https connection, each methods return `301`.
+In case of bitbank API error, methods return response code.
+If there is no error, those return data in `json` format.
+
 ### realtime_bitbank_api
 ```ruby:example
 require 'realtime_bitbank_api'
