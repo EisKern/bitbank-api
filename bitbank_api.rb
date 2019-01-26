@@ -164,8 +164,13 @@ class BitbankAPI
     def https_setting(uri)
         https = Net::HTTP.new(uri.host, uri.port)
         https.use_ssl = true
-        https.verify_mode = OpenSSL::SSL::VERIFY_PEER
-        https.ca_file = "./tools/cacert.pem"
+        https.verify_mode = OpenSSL::SSL::VERIFY_NONE
+=begin
+        if File.exist?("./cacert.pem")
+            https.verify_mode = OpenSSL::SSL::VERIFY_PEER
+            https.ca_file = "./cacert.pem"
+        end
+=end
         return https
     end
 
