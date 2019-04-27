@@ -15,8 +15,7 @@ Install before use these.
 bundle init
 ```
 
-in Gemfile.
-```txt
+```txt:Gemfile
 gem "activesupport"
 gem "pubnub"
 ```
@@ -26,8 +25,8 @@ bundle install --path=vendor/bundle
 ```
 
 ### bitbank_api
-```ruby
-# sample
+
+```ruby:sample1.rb
 require './bitbank_api'
 
 bitbank = BitbankAPI.new(
@@ -47,16 +46,15 @@ For details, please see [official documents](https://docs.bitbank.cc/).
 - transactions
 - candlestick
 
-```ruby
-# sample
+```ruby:sample2.rb
 bitbank.ticker
 
 bitbank.depth
 
-#                      date
+#                    date
 bitbank.transactions("20190126") # Argument can be nil
 
-#                      term, date
+#                   term   , date
 bitbank.candlestick("15min", "20190126")
 ```
 
@@ -65,7 +63,7 @@ bitbank.candlestick("15min", "20190126")
 - read order
 - read status
 
-```ruby
+```ruby:sample3.rb
 # sample
 
 bitbank.read_assets
@@ -78,10 +76,8 @@ bitbank.read_status
 - create order
 - cancel order
 
-```ruby
-# sample
-
-#                    price, amount, side, type
+```ruby:sample4.rb
+#                     price, amount, side, type
 bitbank.create_order(400000, 1.0, "buy", "limit")
 
 #                    order id
@@ -93,9 +89,8 @@ In case of bitbank API error, methods return response code.
 If there is no error, those return data in `json` format.  
 
 ### realtime_bitbank_api
-```ruby
-# sample
 
+```ruby:sample5.rb
 require 'realtime_bitbank_api'
 
 log = Logger.new("./log20180126.log")
@@ -115,6 +110,7 @@ Following are prepared in pubnub.
 - depth
 - transactions
 - candlestick
+
 For details, please see [official documents](https://docs.bitbank.cc/).  
 
 Data reception from pubnub channel is started when pubnub instance is created.  
