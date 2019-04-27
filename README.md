@@ -119,7 +119,7 @@ For details, please see [official documents](https://docs.bitbank.cc/).
 
 Data reception from pubnub channel is started when pubnub instance is created.  
 To Receive Data, use `queue.pop`.  
-In default, data is popeed into the queue once every three seconds.  
+In default, data is popped into the queue once every three seconds.  
 
 ## Future　(if I have time)
 - Add comments to code for easy understanding.
