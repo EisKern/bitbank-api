@@ -8,13 +8,14 @@ Clone this repository.
 
 ## Usage
 
-These use gems "active_support" and "pubnub".  
-Install before use these.  
+These use gems `active_support` and `pubnub`.  
+Install before using these.  
 
 ```sh
 bundle init
 ```
 
+Gemfile
 ```txt:Gemfile
 gem "activesupport"
 gem "pubnub"
@@ -26,6 +27,7 @@ bundle install --path=vendor/bundle
 
 ### bitbank_api
 
+sample1
 ```ruby:sample1.rb
 require './bitbank_api'
 
@@ -46,6 +48,7 @@ For details, please see [official documents](https://docs.bitbank.cc/).
 - transactions
 - candlestick
 
+sample2
 ```ruby:sample2.rb
 bitbank.ticker
 
@@ -63,9 +66,8 @@ bitbank.candlestick("15min", "20190126")
 - read order
 - read status
 
+sample3
 ```ruby:sample3.rb
-# sample
-
 bitbank.read_assets
 
 bitbank.read_order
@@ -76,6 +78,7 @@ bitbank.read_status
 - create order
 - cancel order
 
+sample4
 ```ruby:sample4.rb
 #                     price, amount, side, type
 bitbank.create_order(400000, 1.0, "buy", "limit")
@@ -90,6 +93,7 @@ If there is no error, those return data in `json` format.
 
 ### realtime_bitbank_api
 
+sample5
 ```ruby:sample5.rb
 require 'realtime_bitbank_api'
 
