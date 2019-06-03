@@ -124,3 +124,5 @@ In default, data is popped into the queue once every three seconds.
 ## Future (if I have time)
 - Add comments to code for easy understanding.
 - Add logging function in bitbank_api
+
+2019/06/03
