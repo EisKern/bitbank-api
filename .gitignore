@@ -50,5 +50,6 @@ build-iPhoneSimulator/
 .rvmrc
 
 # for myself
+.DS_Store
 error_list.txt
 data_sample.txt
