@@ -15,8 +15,9 @@ Install before using these.
 bundle init
 ```
 
-Gemfile
-```txt:Gemfile
+```ruby
+# Gemfile
+
 gem "activesupport"
 gem "pubnub"
 ```
@@ -27,7 +28,6 @@ bundle install --path=vendor/bundle
 
 ### bitbank_api
 
-sample1
 ```ruby:sample1.rb
 require './bitbank_api'
 
@@ -48,7 +48,6 @@ For details, please see [official documents](https://docs.bitbank.cc/).
 - transactions
 - candlestick
 
-sample2
 ```ruby:sample2.rb
 bitbank.ticker
 
@@ -66,7 +65,6 @@ bitbank.candlestick("15min", "20190126")
 - read order
 - read status
 
-sample3
 ```ruby:sample3.rb
 bitbank.read_assets
 
@@ -78,7 +76,6 @@ bitbank.read_status
 - create order
 - cancel order
 
-sample4
 ```ruby:sample4.rb
 #                     price, amount, side, type
 bitbank.create_order(400000, 1.0, "buy", "limit")
@@ -93,7 +90,6 @@ If there is no error, those return data in `json` format.
 
 ### realtime_bitbank_api
 
-sample5
 ```ruby:sample5.rb
 require 'realtime_bitbank_api'
 
@@ -125,4 +121,9 @@ In default, data is popped into the queue once every three seconds.
 - Add comments to code for easy understanding.
 - Add logging function in bitbank_api
 
-2019/06/03
+## Precautions
+By using this programs, you don't always make money.  
+If you use these, please take responsibility for your actions.
+
+## Author
+[EisKern](https://github.com/EisKern)
